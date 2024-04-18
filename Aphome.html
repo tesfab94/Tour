@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Aphome.css">
+    <link rel="icon" type="image/x-icon" href="omovalleylogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Home</title>
+</head>
+<body >
+    <header>
+        <img src="omovalleylogo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="Aphome.html">Home</a></li>
+                <li><a href="Apdestination.html">Destinations & Events</a></li>
+                <li><a href="Apbook.html">Book destination</a></li>
+                <li><a href="Apblog.html">Blog</a></li>
+                <li><a href="Apaboutus.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="hammer girl.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="african-buffalo-1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="omo-valley-tours.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="shorka.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="bodi.jpg" style="width:100%">
+        </div>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <div class="both">
+      <div class="why">
+        <p class="whyus">
+            <h1>Why us?</h1>
+            Discover the Omo Valley with Us for an unparalleled travel experience that will leave you
+            spellbound. Our dedication to promoting cultural understanding, preserving traditions, and 
+            fostering sustainable development guarantees a journey that is both meaningful and 
+            unforgettable. Immerse yourself in authentic cultural experiences, guided by experts who call the 
+            Omo Valley home, and tailor your itinerary to match your interests and preferences. By choosing 
+            Omovalley, you not only embark on a transformative adventure but also contribute to the well-being 
+            of local communities. Join us and let Omovalley be your gateway to the vibrant cultures and 
+            breathtaking landscapes of Ethiopia's Omo Valley.
+        </p>
+      </div>
+      <div class="video-container">
+        <video  autoplay loop muted>
+            <source src="cup.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    </div>
+      <a href="Apdestination.html"><button id="see" >See tour</button></a>
+<hr>
+      <footer>
+        <div class="footcontainer">
+     
+        <div class="footer-info">
+            <h2><a href="Apaboutus.html">About Us</a></h2>
+            <p>
+                Welcome to Adventure Pulse, your gateway to thrilling experiences and<br>
+                unforgettable journeys! We're here to inspire and empower you to explore<br>
+                the world's most exciting destinations with ease. At Adventure Pulse, <br>
+                we understand the thrill of discovery and the joy of travel. <br>
+                That's why we've curated a selection of the most captivating destinations, <br>
+                from serene natural wonders to vibrant cultural hubs. <br>
+                Whether you're seeking a peaceful retreat in nature or <br>
+                an adrenaline-pumping adventure, we have the perfect destination for you.<br>
+            </p>   
+        </div>
+        <div class="footer-info" id="contact">
+            <h2>Contact Us</h2>
+            <ul>
+                <li><i class="fas fa-phone-alt"> </i> &nbsp;  +251-945-900-395</li>
+                <li><i class="fas fa-envelope"></i> &nbsp; <a href="mailto:tesfaabetefera@gmail.com">tesfaabetefera@gmail.com</a></li>
+                <li><i class="fas fa-map-marker-alt"> &nbsp; &nbsp; </i> 
+                    <a href="https://www.google.com/maps/place/5.786222 , 36.565613" target="_blank">Jinka, Ethiopia</a></li>
+            </ul>
+            <p> <span id="follow">Follow us on</span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </div>
+        <div class="footer-links">
+            <ul>
+                
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Adventure Pulse. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

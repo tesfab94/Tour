@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="Aphome.css">
+    <link rel="icon" type="image/x-icon" href="omovalleylogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Appayment.css">
+</head>
+<body>
+    <header>
+        <img src="omovalleylogo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="Aphome.html">Home</a></li>
+                <li><a href="Apdestination.html">Destinations & Events</a></li>
+                <li><a href="Apbook.html">Book destination</a></li>
+                <li><a href="Apblog.html">Blog</a></li>
+                <li><a href="Apaboutus.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="article">
+            <p>Lorem ipsum dolor sit amet, . Suspendisse lectus tortor, dignissim sit  Cras elementum ultrices diam. Maecenas , mi.</p>
+            <p>Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.</p>
+            <p>Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. .</p>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. .</p>
+            <p>Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. , in tempus sapien eros vitae ligula.</p>
+            <p>Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odioliquam.</p>
+        </div>
+        <div class="flex-container">
+            <div class="container">
+                <div class="title">
+                    <h4>Select a <span style="color: #6064b6;">Payment</span> method</h4>
+                </div>
+                <form action="#">
+                    <input type="radio" name="payment" id="telebirr">
+                    <input type="radio" name="payment" id="CBEbirr">
+                    <input type="radio" name="payment" id="Chapa-pay">
+                    <input type="radio" name="payment" id="paypal">
+
+                    <div class="catagory">
+                        <div class="catagory">
+                            <label for="telebirr" class="telebirrmethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer telebirr">
+                                        <img src="telebirr-logo1.png" alt="">
+                                    </div>
+                                    <span class="name">Telebirr</span>
+                                </div>
+                                <p class="account-number" >Telebirr Account Number <span class="acc-number">0945900395</span></p>
+                                <span class="check">
+                                    <i class="fa-solid fa-circle-check" style="color: #c50a0a;"></i>
+                                </span>
+                               
+                            </label>
+                            
+                            <label for="CBEbirr" class="CBEbirrmethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer CBEbirr">
+                                        <img src="CBE-Birr-Logo.png" alt="">
+                                    </div> 
+                                    <span class="name">CBE birr</span>
+                                </div>
+                                <p class="account-number" >CBEbirr Account Number <span class="acc-number">0945900395</span></p>
+                                <span class="check">
+                                    <i class="fa-solid fa-circle-check" style="color: #c50a0a;"></i>
+                                </span>
+                               
+                            </label>
+                            <label for="Chapa-pay" class="Chapa-paymethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer Chapa-pay">
+                                        <img src="cbe-logo.png" alt="">
+                                    </div>
+                                    <span class="name">Chapa-pay</span>
+                                </div>
+                                <p class="account-number" >CBE Account Number <span class="acc-number">1000297128594</span></p>
+                                <span class="check">
+                                    <i class="fa-solid fa-circle-check" style="color: #c50a0a;"></i>
+                                </span>
+                            </label>
+                            <label for="paypal" class="paypalmethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer paypal">
+                                        <img src="paypal-logo.png" alt="">
+                                    </div>
+                                    <span class="name">Paypal</span>
+                                </div>
+            
+                                <span class="check">
+                                    <i class="fa-solid fa-circle-check" style="color: #c50a0a;"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container1">
+                <form id="image-form" action="upload.php" method="POST" enctype="multipart/form-data">
+                    <div class="wrapper1">
+                        <div class="image">
+                            <img src="" alt="">
+                          </div>
+                        <div class="content">
+                            <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                            <div class="text">No file chosen, yet!</div>
+                        </div>
+                        <div id="cancel-btn"><i class="fas fa-times"></i></div>
+                        <div class="file-name">File name here</div>
+                    </div>
+                    <input type="file" id="default-btn" hidden>
+                    <button onclick="defaultBtnActive(event)" id="custom-btn">Choose a file</button>
+                    <button type="submit" id="submit-btn" hidden>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footcontainer">
+     
+        <div class="footer-info">
+            <h2><a href="Apaboutus.html">About Us</a></h2>
+            <p>
+                Welcome to Adventure Pulse, your gateway to thrilling experiences and<br>
+                unforgettable journeys! We're here to inspire and empower you to explore<br>
+                the world's most exciting destinations with ease. At Adventure Pulse, <br>
+                we understand the thrill of discovery and the joy of travel. <br>
+                That's why we've curated a selection of the most captivating destinations, <br>
+                from serene natural wonders to vibrant cultural hubs. <br>
+                Whether you're seeking a peaceful retreat in nature or <br>
+                an adrenaline-pumping adventure, we have the perfect destination for you.<br>
+            </p>   
+        </div>
+        <div class="footer-info" id="contact">
+            <h2>Contact Us</h2><br>
+            <ul>
+                <li><i class="fas fa-phone-alt"> </i> &nbsp;  +251-945-900-395</li>
+                <li><i class="fas fa-envelope"></i> &nbsp; <a href="mailto:tesfaabetefera@gmail.com">tesfaabetefera@gmail.com</a></li>
+                <li><i class="fas fa-map-marker-alt"> &nbsp; &nbsp; </i> 
+                    <a href="https://www.google.com/maps/place/5.786222 , 36.565613" target="_blank">Jinka, Ethiopia</a></li>
+            </ul><br>
+            <p> <span id="follow">Follow us on</span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </div>
+        <div class="footer-links">
+            <ul>
+                
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Adventure Pulse. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        function defaultBtnActive(event) {
+            event.preventDefault();
+            defaultBtn.click();
+        }
+    
+        const form = document.getElementById('image-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const wrapper = document.querySelector(".wrapper1");
+        const fileName = document.querySelector(".file-name");
+        const cancelBtn = document.querySelector("#cancel-btn");
+        const defaultBtn = document.querySelector("#default-btn");
+        const customBtn = document.querySelector("#custom-btn");
+        const img = document.querySelector(".image img");
+        let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\).\%\+\~\_ ]+$/;
+    
+        defaultBtn.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select an image file.');
+                    return;
+                }
+    
+                const reader = new FileReader();
+                reader.onload = function () {
+                    const result = reader.result;
+                    img.src = result;
+                    wrapper.classList.add("active");
+                    submitBtn.removeAttribute("hidden");
+                }
+                cancelBtn.addEventListener("click", function () {
+                    img.src = "";
+                    wrapper.classList.remove("active");
+                    submitBtn.setAttribute("hidden", true);
+                })
+                reader.readAsDataURL(file);
+            }
+            if (this.value) {
+                let valueStore = this.value.match(regExp);
+                fileName.textContent = valueStore;
+            }
+        });
+    
+        customBtn.addEventListener("click", function () {
+            defaultBtnActive();
+        });
+    
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Image submitted!');
+        });
+    
+//payment account pop up
+
+// Get all payment method labels
+const paymentMethodLabels = document.querySelectorAll('label');
+
+// Loop through each label
+paymentMethodLabels.forEach(label => {
+    // Add click event listener to each label
+    label.addEventListener('click', () => {
+        // Hide all account numbers
+        document.querySelectorAll('.account-number').forEach(element => {
+            element.style.display = 'none';
+        });
+
+        // Show the account number of the selected payment method
+        const accountNumber = label.querySelector('.account-number');
+        if (accountNumber) {
+            accountNumber.style.display = 'block';
+        }
+    });
+});
+
+    </script>
+    
+</body>
+</html>

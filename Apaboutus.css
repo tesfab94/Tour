@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    color: white;
+    
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  .welcome{
+    width: 250px;
+  }
+
+  h1, h2, h4 {
+    margin-top: 20px;
+  }
+  h4{
+    color: yellow;
+  }
+  h1, h2{
+    color: red;
+  }
+  h1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .webbook{
+    color: blue;
+    text-decoration: underline;
+  }
+  footer h2{
+    color: white;
+  }
+  
