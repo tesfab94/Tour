@@ -103,7 +103,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/yourusername/omo-valley-tour-booking.git
+  git clone https://github.com/tesfab94/Tour.git
 ```
 ### Install
 Install this project by setting up your local server and database:
