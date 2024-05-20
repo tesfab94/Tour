@@ -136,25 +136,20 @@ You can deploy this project using any web hosting service that supports PHP and 
 
 - GitHub: [@melesemuche](https://github.com/githubhandle)
 - Twitter: [@melese81](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
   
 👤 **Selamawit Teshome**
 
-- GitHub: [@melesemuche](https://github.com/githubhandle)
-- Twitter: [@melese81](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@selamawit42](https://github.com/githubhandle)
  
 👤 **Eyerusalem**
 
-- GitHub: [@melesemuche](https://github.com/githubhandle)
-- Twitter: [@melese81](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@jerusalem92](https://github.com/githubhandle)
+
 
 👤 **Abenezer Alemu**
 
-- GitHub: [@melesemuche](https://github.com/githubhandle)
-- Twitter: [@melese81](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@ablexsa](https://github.com/githubhandle)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- FUTURE FEATURES -->
 
