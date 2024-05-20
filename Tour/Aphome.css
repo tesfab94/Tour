@@ -1,0 +1,314 @@
+
+
+    /*body {
+    background-image: url('P:/Adventure pulse/Pictures/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0);
+}*/
+header{
+padding: 10px 20px; /* Add padding for spacing */
+    align-items: center;
+    background-color: #333;
+   
+}
+.logo {
+    width: 150px; /* Adjust the width as needed */
+}
+body {
+    background-color: #000; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+    background-position: center;
+    background-attachment: fixed;
+
+}
+/*body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 1; 
+}*/
+h1{
+    color: rgb(255, 255, 0);
+    font-size: 250%;
+    font-style: oblique;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+a:active{
+    text-decoration: underline;
+}
+a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration:none;
+}
+ a:hover{
+    color: yellow;
+    transition: width 0.3s;
+}
+header a:hover::before {
+    width: 100%; /* Extend the underline to the right side on hover */
+}
+ul a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Position the underline below the text */
+    left: 0; /* Start the underline from the left side */
+    width: 0; /* Initially set the width to 0 */
+    height: 2px; /* Set the height of the underline */
+    background-color: yellow; /* Color of the underline */
+    transition: width 0.6s; /* Transition effect for the width */
+}
+
+ 
+.why {
+    width: 48%;
+    text-align: left;
+    margin-left: 50px;
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 15px; /* Add right margin for space */
+}
+  .both{
+    display:flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Cover the entire container */
+}
+.video-container {
+    position: relative;
+    width: 30%; /* Decrease the width */
+    margin: 39px auto; /* Center the div horizontally */
+    overflow: hidden;
+    margin-top: 100px;
+    margin-left: 20%; /* Add left margin for space */
+    margin-right: 20px;
+
+}
+ .why h1{
+    color: #d0ff00;
+ }
+ #see{
+    justify-content: center;
+    padding: 10px;
+    width: 300px;
+    background-color: red;
+    color: #fff;
+    margin: auto 38%;
+    height:50px ;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:  0.9s;
+    transform: 0.9s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+ #see:hover {
+    background-color:#d0ff00 ;
+    color: black;
+  }
+  /* Animation effect for a button see tour */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  #see {
+    animation: pulse 1s infinite;
+  }
+ 
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+.footer-info a {
+    color: #007bff; /* Change color of icons */
+    text-decoration: none; /* Remove underline from icons */
+    margin: 0 5px; /* Add spacing between icons */
+    font-size: 24px; /* Increase icon size */
+    transition: color 0.5s; /* Add smooth color transition */
+}
+
+.footer-info a:hover {
+    color: #d0ff00; /* Change color on hover */
+}
+.footer-info{
+    display: inline-block; /* Display images inline */
+    margin: 20px; /* Add some space around the images */
+    text-align:left;
+}
+.footcontainer{
+    text-align:left;
+}
+#contact{
+    margin-left: 30%;
+}
+#follow{
+    font-weight:bold;
+    font-size:large;
+}
+hr{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#contact ul{
+    list-style-type: none;
+}
+li{
+    list-style-type: none; 
+}
+
+  /* CSS for slideshow */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 600px; /* Set the desired height for all images */
+    overflow: hidden; /* Hide overflow to prevent images from stretching */
+}
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+

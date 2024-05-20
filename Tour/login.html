@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="Aphome.css">
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    display: block;
+}
+
+.login-container {
+    width: 300px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    height: 400px;
+   margin: auto;
+   margin-top: 40px;
+   margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+button {
+    width: 97%;
+    padding: 10px;
+    background: linear-gradient(to right, #4CAF50, #2E8B57);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+a{
+    color: blue;
+    
+}
+button:hover {
+    background: linear-gradient(to right, #2E8B57, #4CAF50);
+}
+p{
+    text-align: left;
+}
+
+
+</style>
+</head>
+<body>
+
+    <header>
+        <img src="omovalleylogo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="Aphome.html">Home</a></li>
+                <li><a href="Apdestination.html">Destinations & Events</a></li>
+                <li><a href="Apbook.html">Book destination</a></li>
+                <li><a href="Apaboutus.html">About us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+<div class="login-container">
+<h2>Login</h2>
+<form id="loginForm" action="login.php" method="POST">
+<input type="email" name="email" placeholder="email" required><br><br>
+<input type="password" name="password" placeholder="Password" required><br><br>
+<button type="submit">Login</button>
+<p style="text-align: center;">Don't have an account? <a href="register.html">Sign up</a></p>
+</form>
+</div>
+
+
+<footer>
+    <div class="footcontainer">
+      <div class="footer-info">
+        <h2><a href="#">About Us</a></h2>
+        <p>
+          Welcome to Adventure Pulse, your gateway to thrilling experiences and<br>
+          unforgettable journeys! We're here to inspire and empower you to explore<br>
+          the world's most exciting destinations with ease. At Adventure Pulse, <br>
+          we understand the thrill of discovery and the joy of travel. <br>
+          That's why we've curated a selection of the most captivating destinations, <br>
+          from serene natural wonders to vibrant cultural hubs. <br>
+          Whether you're seeking a peaceful retreat in nature or <br>
+          an adrenaline-pumping adventure, we have the perfect destination for you.<br>
+        </p>
+      </div>
+      <div class="footer-info" id="contact">
+        <h2>Contact Us</h2>
+        <ul>
+          <li>phone &nbsp;  +251-945-900-395</li>
+          <li>email &nbsp; <a href="mailto:tesfaabetefera@gmail.com">tesfaabetefera@gmail.com</a></li>
+          <li> location&nbsp; &nbsp; </i> 
+            <a href="https://www.google.com/maps/place/5.786222 , 36.565613" target="_blank">Jinka, Ethiopia</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2024 Adventure Pulse. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Serialize form data
+    var formData = new FormData(this);
+
+    // Send form data to login.php using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'login.php', true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            if (xhr.responseText.trim() === 'success') {
+                // Redirect to Apbook.html after successful login
+                window.location.href = 'Apbook.html';
+            } else {
+                // Handle login errors (e.g., display error message)
+                alert('Login failed. Please try again.');
+            }
+        } else {
+            // Handle server errors
+            alert('Server error. Please try again later.');
+        }
+    };
+    xhr.send(formData);
+});
+
+</script>
+</body>
+</html>

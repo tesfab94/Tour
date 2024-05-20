@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 20px;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 10px;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-bottom: 20px;
+        }
+
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: #fff;
+            width: 100%;        
+        }
+        nav ul li:hover {
+    background-color: #fff; /* Cover the entire horizontal line */
+}
+
+        main {
+            margin-left: 220px; /* Adjust to match nav width + some padding */
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            display: none; /* Initially hide all sections */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .all {
+            display: flex;
+            flex-direction: row; /* Arrange items horizontally */
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="#users">Manage Users</a></li>
+                    <li><a href="#bookings">Manage Bookings</a></li>
+                    <li><a href="#changeContent">Change Content</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <main>
+                <section id="bookings">
+                    <h2>Manage Bookings</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th>email</th>
+                                <th>attraction</th>
+                                <th>hotel</th>
+                                <th>visitors</th>
+                                <th>coupleType</th>
+                                <th>groupSize</th>
+                                <th>visitation</th>
+                                <th>duration</th>
+                                <th>start_date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Loop through the database results and output data in table rows
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["name"] . "</td>";
+                                echo "<td>" . $row["email"] . "</td>";
+                                echo "<td>" . $row["attraction"] . "</td>";
+                                echo "<td>" . $row["hotel"] . "</td>";
+                                echo "<td>" . $row["visitors"] . "</td>";
+                                echo "<td>" . $row["couple_type"] . "</td>";
+                                echo "<td>" . $row["group_size"] . "</td>";
+                                echo "<td>" . $row["visitation"] . "</td>";
+                                echo "<td>" . $row["duration"] . "</td>";
+                                echo "<td>" . $row["start_date"] . "</td>";
+                                echo "<td>";
+                                echo "<button>Edit</button>";
+                                echo "<button>Delete</button>";
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </section>
+                
+                
+                <section id="changeContent">
+                    <h2>Change Content</h2>
+                    <form id="contentChangeForm">
+                        <label for="content">Content:</label><br>
+                        <textarea id="content" name="content" rows="6" cols="50" placeholder="Enter new content here..."></textarea><br>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </section>
+                
+            </main>
+        </div>
+    </div>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const sections = document.querySelectorAll('section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    showSection(targetId);
+                });
+            });
+
+            function showSection(targetId) {
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            // Initially show the first section
+            showSection(sections[0].id);
+        });
+    </script>
+</body>
+</html>

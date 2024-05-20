@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+   
+   
+    <link rel="stylesheet" href="Aphome.css">
+    <link rel="icon" type="image/x-icon" href="omovalleylogo.png">
+    <style>
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); 
+}
+.container {
+    width: 500px;
+    border-radius: 8px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgb(0, 0, 0, 0.1),
+                0 5px 12px -12px rgb(0, 0, 0, 0.1),
+                0 18px 36px -6px rgb(0, 0, 0, 0.1);
+    margin-right: 20px; /* Add margin to create space between container and upload div */
+}
+.container .title{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container form input{
+    display: none;
+}
+.container form .catagory {
+    margin-top: 10px;
+    padding-top: 20px;
+}
+.catagory label{
+    width: 100%;
+    height: 65px;
+    padding: 20px;
+    box-shadow: 0px 0px 0px 1px rgb(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#telebirr:checked ~ .catagory .telebirrmethod ,
+#CBEbirr:checked ~ .catagory .CBEbirrmethod,
+#Chapa-pay:checked ~ .catagory .Chapa-paymethod,
+#paypal:checked ~ .catagory .paypalmethod{
+    box-shadow: 0px 0px 0px 1px #c50a0a;
+}
+#telebirr:checked ~ .catagory .telebirrmethod .check,
+#CBEbirr:checked ~ .catagory .CBEbirrmethod .check,
+#Chapa-pay:checked ~ .catagory .Chapa-paymethod .check,
+#paypal:checked ~ .catagory .paypalmethod .check{
+    display: block;
+}
+.account-number{
+    display: none;
+    color: black;
+   
+}
+.acc-number{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 25px;
+    color: black;
+}
+
+label:nth-child(2), label:nth-child(3){
+    margin: 15px 0;
+}
+label .imgName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.imgName span{
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.imgName .imgcontainer{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 50px;
+    height: auto;
+}
+.telebirr img{
+    width: 60px;
+    margin-left: 3px;
+}
+.CBEbirr img{
+    width: 60px;
+}
+.paypal img{
+ width: 70px;
+}
+.Chapa-pay img{
+ width: 60px;
+}
+.check{
+    display: none;
+}
+.check i{
+    font-size: 18px;
+}
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4; /* Light grey background color */
+    padding: 20px; /* Add some padding around the wrapper */
+}
+.article {
+    background-color: #d6e4f0; /* Light blue background color */
+    padding: 20px;
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+                0 5px 12px -12px rgba(0, 0, 0, 0.1),
+                0 18px 36px -6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px; /* Add space between article and flex container */
+}
+.flex-container {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: center;
+}
+
+.upload {
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgb(0, 0, 0, 0.1),
+                0 5px 12px -12px rgb(0, 0, 0, 0.1),
+                0 18px 36px -6px rgb(0, 0, 0, 0.1);
+}
+
+/* Styles for the preview image */
+
+.container1{
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgb(0, 0, 0, 0.1),
+                0 5px 12px -12px rgb(0, 0, 0, 0.1),
+                0 18px 36px -6px rgb(0, 0, 0, 0.1);
+}
+.container1 .wrapper1{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border: 2px dashed #c2cdda;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.wrapper1.active{
+    border: none;
+}
+.wrapper1 .image{
+position: absolute;
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.wrapper1 .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.wrapper1 .icon{
+    font-size: 100px;
+    color: #9658fe;
+}
+.wrapper1 .text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #5b5b7b;
+    left: 0%;
+}
+.wrapper1 #cancel-btn{
+   position: absolute;
+   right: 15px;
+   top: 15px;
+   font-size: 20px;
+   cursor: pointer;
+   color: #9658fe;
+   display: none;
+}
+.wrapper1.active:hover #cancel-btn{
+    display: block;
+}
+.wrapper1 #cancel-btn:hover{
+    color: #e74c3c;
+}
+.wrapper1 .file-name{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 18px;
+    display: none;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+ }
+ .wrapper1.active:hover .file-name{
+    display: block;
+}
+  #custom-btn {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+ }
+ .container1 #submit-btn{
+    cursor: pointer;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+ }
+ label {
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 20px;
+  }
+  input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <img src="omovalleylogo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="Aphome.html">Home</a></li>
+                <li><a href="Apdestination.html">Destinations & Events</a></li>
+                <li><a href="login.html">Book destination</a></li>
+                <li><a href="Apaboutus.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="article">
+            <ul>
+            <li>After making a payment send us the screenhoot of your transaction history.</li><br><br>
+            <li>use your name and email that you used to book a tour when sends us your transaction details</li>
+            </ul>
+          
+        </div>
+        <div class="flex-container">
+            <div class="container">
+                <div class="title">
+                    <h4>Select a <span style="color: #6064b6;">Payment</span> method</h4>
+                </div>
+                <form action="#">
+                    <input type="radio" name="payment" id="telebirr">
+                    <input type="radio" name="payment" id="CBEbirr">
+                    <input type="radio" name="payment" id="Chapa-pay">
+                    <input type="radio" name="payment" id="paypal">
+
+                    <div class="catagory">
+                        <div class="catagory">
+                            <label for="telebirr" class="telebirrmethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer telebirr">
+                                        <img src="telebirr-logo1.png" alt="">
+                                    </div>
+                                    <span class="name">Telebirr</span>
+                                </div>
+                                <p class="account-number" >Telebirr Account Number <span class="acc-number">0945900395</span><span style="display: block; font-weight: bold;">Tesfab tefera</span></p>
+                              
+                               
+                            </label>
+                            
+                            <label for="CBEbirr" class="CBEbirrmethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer CBEbirr">
+                                        <img src="CBE-Birr-Logo.png" alt="">
+                                    </div> 
+                                    <span class="name">CBE birr</span>
+                                </div>
+                                <p class="account-number" >CBEbirr Account Number <span class="acc-number">0945900395</span><span style="display: block; font-weight: bold;">Tesfab tefera</span></p>
+                               
+                               
+                            </label>
+                            <label for="Chapa-pay" class="Chapa-paymethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer Chapa-pay">
+                                        <img src="cbe-logo.png" alt="">
+                                    </div>
+                                    <span class="name">Chapa-pay</span>
+                                </div>
+                                <p class="account-number" >CBE Account Number <span class="acc-number">1000297128594</span><span style="display: block; font-weight: bold;">Tesfab tefera</span></p>
+                               
+                            </label>
+                            <label for="paypal" class="paypalmethod">
+                                <div class="imgName">
+                                    <div class="imgcontainer paypal">
+                                        <img src="paypal-logo.png" alt="">
+                                    </div>
+                                    <span class="name">Paypal</span>
+                                </div>
+            
+                                
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container1">
+                <form id="image-form" action="payment.php" method="POST" enctype="multipart/form-data">
+                    <input type="text" id="name" class="tovalidate" name="name" placeholder="Name" required>
+                    <input type="email" id="email" class="tovalidate" name="email" placeholder="Email" required><br>
+                    
+                    <div class="wrapper1">
+                        <div class="image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                            <div class="text">No file chosen, yet!</div>
+                        </div>
+                        <div id="cancel-btn"><i class="fas fa-times"></i></div>
+                        <div class="file-name">File name here</div>
+                    </div>
+                    
+                    <input type="file" id="file" name="file" hidden>
+                    <button type="button" onclick="chooseFile()" id="custom-btn">Choose a file</button>
+                    <button type="submit" id="submit-btn" hidden>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footcontainer">
+     
+        <div class="footer-info">
+            <h2><a href="Apaboutus.html">About Us</a></h2>
+            <p>
+                Welcome to Adventure Pulse, your gateway to thrilling experiences and<br>
+                unforgettable journeys! We're here to inspire and empower you to explore<br>
+                the world's most exciting destinations with ease. At Adventure Pulse, <br>
+                we understand the thrill of discovery and the joy of travel. <br>
+                That's why we've curated a selection of the most captivating destinations, <br>
+                from serene natural wonders to vibrant cultural hubs. <br>
+                Whether you're seeking a peaceful retreat in nature or <br>
+                an adrenaline-pumping adventure, we have the perfect destination for you.<br>
+            </p>   
+        </div>
+        <div class="footer-info" id="contact">
+            <h2>Contact Us</h2><br>
+            <ul>
+                <li>phone &nbsp;  +251-945-900-395</li>
+                <li>email &nbsp; <a href="mailto:tesfaabetefera@gmail.com">tesfaabetefera@gmail.com</a></li>
+                <li> location&nbsp; &nbsp; </i> 
+                  <a href="https://www.google.com/maps/place/5.786222 , 36.565613" target="_blank">Jinka, Ethiopia</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="footer-links">
+            <ul>
+                
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 Adventure Pulse. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        function defaultBtnActive(event) {
+            event.preventDefault();
+            defaultBtn.click();
+        }
+    
+        const form = document.getElementById('image-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const wrapper = document.querySelector(".wrapper1");
+        const fileName = document.querySelector(".file-name");
+        const cancelBtn = document.querySelector("#cancel-btn");
+        const defaultBtn = document.querySelector("#default-btn");
+        const customBtn = document.querySelector("#custom-btn");
+        const img = document.querySelector(".image img");
+        let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\).\%\+\~\_ ]+$/;
+    
+        defaultBtn.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Please select an image file.');
+                    return;
+                }
+    
+                const reader = new FileReader();
+                reader.onload = function () {
+                    const result = reader.result;
+                    img.src = result;
+                    wrapper.classList.add("active");
+                    submitBtn.removeAttribute("hidden");
+                }
+                cancelBtn.addEventListener("click", function () {
+                    img.src = "";
+                    wrapper.classList.remove("active");
+                    submitBtn.setAttribute("hidden", true);
+                })
+                reader.readAsDataURL(file);
+            }
+            if (this.value) {
+                let valueStore = this.value.match(regExp);
+                fileName.textContent = valueStore;
+            }
+        });
+    
+        customBtn.addEventListener("click", function () {
+            defaultBtnActive();
+        });
+    
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('file submitted!');
+        });
+    
+//payment account pop up
+
+// Get all payment method labels
+const paymentMethodLabels = document.querySelectorAll('label');
+
+// Loop through each label
+paymentMethodLabels.forEach(label => {
+    // Add click event listener to each label
+    label.addEventListener('click', () => {
+        // Hide all account numbers
+        document.querySelectorAll('.account-number').forEach(element => {
+            element.style.display = 'none';
+        });
+
+        // Show the account number of the selected payment method
+        const accountNumber = label.querySelector('.account-number');
+        if (accountNumber) {
+            accountNumber.style.display = 'block';
+        }
+    });
+});
+
+    </script>
+    <script>
+       function chooseFile() {
+    document.getElementById('file').click();
+}
+
+document.getElementById('file').addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            document.querySelector('.image img').src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        document.querySelector('.text').textContent = file.name;
+        document.querySelector('.icon').innerHTML = '<i class="fas fa-file"></i>';
+        document.getElementById('submit-btn').removeAttribute('hidden');
+    }
+});
+
+document.getElementById('cancel-btn').addEventListener('click', function () {
+    document.getElementById('file').value = '';
+    document.querySelector('.text').textContent = 'No file chosen, yet!';
+    document.querySelector('.icon').innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i>';
+    document.getElementById('submit-btn').setAttribute('hidden', true);
+});
+function submitForm() {
+    const form = document.getElementById('image-form');
+    const formData = new FormData(form); // Define formData here
+    
+    fetch('payment.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+        // Optionally, reset the form after successful submission
+        form.reset();
+        document.getElementById('submit-btn').setAttribute('hidden', true);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+
+    </script>
+</body>
+</html>

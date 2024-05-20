@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="omovalleylogo.png">
+    
+    <link rel="stylesheet" href="Aphome.css">
+    <link rel="stylesheet" href="Apbook.css">
+    
+    <title>Book destination</title>
+</head>
+<body>
+    <header>
+        <img src="omovalleylogo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="Aphome.html">Home</a></li>
+                <li><a href="Apdestination.html">Destinations & Events</a></li>
+                <li><a href="Apbook.html">Book destination</a></li>
+                <li><a href="Apaboutus.html">About us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+      <h1>Book Attraction Center</h1>
+      <form id="bookingForm" action="some.php" method="post" onsubmit="return validateForm()">
+
+        <input type="hidden" id="bookingId" name="bookingId">
+        <input type="hidden" id="action" name="action">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="attraction">Select Attraction:</label>
+        <select id="attraction" name="attraction" onchange="populateHotels()" required>
+          <option value="">Select an attraction</option>
+          <option value="Hammer">Hammer</option>
+          <option value="Mursi">Mursi</option>
+          <option value="Bodi">Bodi</option>
+          <option value="Suri">Suri</option>
+          <option value="Banna">Banna</option>
+          <option value="Kibbish">Kibbish</option>
+          <option value="Hayzo">Hayzo</option>
+        </select>
+        
+        <label for="hotel">Select Hotel:</label>
+        <select id="hotel" name="hotel" required>
+          <option value="">Select a hotel</option>
+        </select>
+
+        <label for="visitors">Number of Visitors:</label>
+        <select id="visitors" name="visitors" required onchange="showAdditionalOptions()">
+          <option value="">Select</option>
+          <option value="individual">Individual</option>
+          <option value="couple">Couple</option>
+          <option value="group">Group</option>
+        </select>
+        <div id="coupleOptions" style="display:none;">
+          <label for="coupleType">Couple Type:</label>
+          <select id="coupleType" name="coupleType" required>
+            <option value="">Select</option>
+            <option value="married">Married</option>
+            <option value="bf_gf">Boyfriend & Girlfriend</option>
+            <option value="bff">Best Friends Forever (BFFs)</option>
+          </select>
+        </div>
+        <div id="groupInput" style="display:none;">
+          <label for="groupSize">Group Size:</label>
+          <input type="number" id="groupSize" name="groupSize" min="1">
+        </div>
+
+        <label for="visitation">Number of Days of Visitation:</label>
+        <select id="visitation" name="visitation" required onchange="showAdditionalInputs()">
+          <option value="">Select</option>
+          <option value="days">A day</option>
+          <option value="week">A week</option>
+          <option value="month">A month</option>
+        </select>
+        <div id="additionalInputs" style="display: none;">
+          <label for="duration">Duration:</label>
+          <input type="number" id="duration" name="duration" min="1" required>
+        </div>
+
+        <label for="start_date">Start Date:</label>
+        <input type="text" id="start_date" name="start_date" required>
+
+        <button type="submit" id="submit">Book</button><br><br>
+        <a href="payment.html" style="font-size: 25px;">Pay for tour</a>
+      </form>
+    </div>
+
+    <hr>
+    <footer>
+      <div class="footcontainer">
+        <div class="footer-info">
+          <h2><a href="#">About Us</a></h2>
+          <p>
+            Welcome to Adventure Pulse, your gateway to thrilling experiences and<br>
+            unforgettable journeys! We're here to inspire and empower you to explore<br>
+            the world's most exciting destinations with ease. At Adventure Pulse, <br>
+            we understand the thrill of discovery and the joy of travel. <br>
+            That's why we've curated a selection of the most captivating destinations, <br>
+            from serene natural wonders to vibrant cultural hubs. <br>
+            Whether you're seeking a peaceful retreat in nature or <br>
+            an adrenaline-pumping adventure, we have the perfect destination for you.<br>
+          </p>
+        </div>
+        <div class="footer-info" id="contact">
+          <h2>Contact Us</h2>
+          <ul>
+            <li>phone &nbsp;  +251-945-900-395</li>
+            <li>email &nbsp; <a href="mailto:tesfaabetefera@gmail.com">tesfaabetefera@gmail.com</a></li>
+            <li> location&nbsp; &nbsp; </i> 
+              <a href="https://www.google.com/maps/place/5.786222 , 36.565613" target="_blank">Jinka, Ethiopia</a></li>
+        </ul>
+        </div>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2024 Adventure Pulse. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      var hotels = {
+  "Hammer": ["Hotel hammer 1", "Hotel hammer 2", "Hotel hammer 3"],
+  "Mursi": ["Hotel mursi 4", "Hotel mursi 5", "Hotel mursi 6"],
+  "Bodi": ["Hotel bodi 7", "Hotel bodi 8", "Hotel bodi 9"],
+  "Suri": ["Hotel 10", "Hotel 11", "Hotel 12"],
+  "Banna": ["Hotel 13", "Hotel 14", "Hotel 15"],
+  "Kibbish": ["Hotel 16", "Hotel 17", "Hotel 18"],
+  "Hayzo": ["Hotel 19", "Hotel 20", "Hotel 21"]
+};
+
+function populateHotels() {
+  var attraction = document.getElementById('attraction').value;
+  var hotelSelect = document.getElementById('hotel');
+  hotelSelect.innerHTML = '<option value="">Select a hotel</option>';
+
+  if (hotels[attraction]) {
+    hotels[attraction].forEach(function(hotel) {
+      var option = document.createElement('option');
+      option.text = hotel;
+      option.value = hotel;
+      hotelSelect.add(option);
+    });
+  }
+}
+
+      function showAdditionalOptions() {
+        var visitors = document.getElementById('visitors').value;
+        var coupleOptions = document.getElementById('coupleOptions');
+        var groupInput = document.getElementById("groupInput");
+        if (visitors === "couple") {
+          coupleOptions.style.display = "block";
+          coupleOptions.querySelector("select").required = true;
+          groupInput.style.display = "none";
+          groupInput.querySelector("input").required = false;
+        } else if (visitors === "group") {
+          coupleOptions.style.display = "none";
+          coupleOptions.querySelector("select").required = false;
+          groupInput.style.display = "block";
+          groupInput.querySelector("input").required = true;
+        } else {
+          coupleOptions.style.display = "none";
+          coupleOptions.querySelector("select").required = false;
+          groupInput.style.display = "none";
+          groupInput.querySelector("input").required = false;
+        }
+      }
+
+      function showAdditionalInputs() {
+        var visitation = document.getElementById('visitation').value;
+        var additionalInputs = document.getElementById('additionalInputs');
+        var duration =document.getElementById('duration');
+
+        if (visitation === "days") {
+          additionalInputs.style.display = "block";
+          duration.max=366;
+        } 
+        else if(visitation === "week"){
+          additionalInputs.style.display = "block";
+          duration.max=52;
+        }
+        else if(visitation === "month"){
+          additionalInputs.style.display = "block";
+          duration.max=12;
+        }
+        else {
+          additionalInputs.style.display = "none";
+        }
+      }
+
+      flatpickr("#start_date", {
+        enableTime: false,
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+      });
+     
+        //to stop jumping into another page without filling the required forms with a book Now button
+        function validateForm() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var attraction = document.getElementById('attraction').value;
+    var visitors = document.getElementById('visitors').value;
+    var visitation = document.getElementById('visitation').value;
+    var start_date = document.getElementById('start_date').value;
+
+    if (name === "" || email === "" || attraction === "" || visitors === "" || visitation === "" || start_date === "") {
+        alert("Please fill out all fields");
+        return false; // Prevent form submission
+    }
+
+    var formData = new FormData(document.getElementById('bookingForm'));
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert("Your booking has been confirmed!");
+            } else {
+                alert("There was an error processing your request. Please try again later.");
+            }
+        }
+    };
+    xhr.open('POST', 'some.php', true);
+    xhr.send(formData);
+
+    return false; // Prevent form submission
+}
+
+
+
+    </script>
+    <script>
+      document.getElementById('bookButton').addEventListener('click', function() {
+          this.innerText = 'Pending...';
+          this.disabled = true;
+      });
+  
+      function validateForm() {
+          // Your validation logic
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+
+nav ul li button {
+    font-size: 20px;
+    color: white;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+nav ul li button:hover {
+    color: aqua;
+}
+
+nav ul li a:hover {
+    color: aqua;
+}
+#login-form
+{
+    display: none;
+}
+.form-box {
+    width: 380px;
+    height: 480px; /* Add missing unit here */
+    position: relative;
+    margin: 2% auto;
+    background: rgba(0, 0, 0, 0.3); /* Fix typo "rgbe" to "rgba" */
+    padding: 10px;
+    overflow: hidden;
+}
+
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    margin-bottom: 20px ;
+    position: relative;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    position: relative;
+}
+
+.check-box {
+    margin: 3px 10px 34px 20px;
+}
+
+span {
+    color: #fff;
+    font-size: 16px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#login {
+    left: 50px;
+}
+#login input
+{
+    color: #fff;
+    font-size: 15;
+}
+#register {
+    left: 450px;
+}
+#register input
+{
+    color: white;
+    font-size: 15;
+}
+.input-field {
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+    background: transparent;
+    border-radius: 40px;
+    padding: 10px;
+    margin-top: 7px;
+}
+
+.input-field::placeholder {
+    color: #fff;
+    display:flex;
+}
+.input-group-login
+{
+    top: 150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-group-register 
+{
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+#btn
+{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 35px;
+    background: #f3c693;
+    border-radius: 30px;
+    transition: .5s;
+    text-align: left;
+}
+.submit-btn
+{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #f3c693;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.button-box
+{
+    width: 220px;
+    margin:35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #f3c693;
+    border-radius: 30px;
+}
+ion-icon {
+    position: absolute;
+    right: 5px;
+    font-size: 1.3em;
+    line-height: 15px;
+    transform: translateY(-120%);
+}
+.form-details .form-box {
+    display: flex;
+}
+.form-details h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-box .form-details{
+    max-width: 330px;
+}
+.form-box .form-content{
+    width: 100%;
+    padding: 35px;
+}
+.form-box .forgot-pass{
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+    text-align: left;
+    margin-bottom: 14px;
+}
+.form-box .bottom-link{
+    text-align: center;
+    color: #fff;
+    margin-top: 14px;
+}
+.pra{
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.form-box .error{
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    color: #d93025;
+    font-size: 13px;
+}
+.error-text{
+    margin: 70px;
+    text-align: left;
+}
+error-icon{
+ 
+    left: 5px;
+    font-size: 1.3em;
+}

@@ -1,0 +1,148 @@
+.page {
+    display: none; /* Hide all pages by default */
+    background-color: #080808;
+    color: #fff;
+  }
+  .active {
+    display: block; /* Show the active page */
+  }
+  .container {
+    text-align:left; /* Center align the content */
+  }
+  body{
+    background-color: #333;
+  }
+  .image {
+    display: inline-block; /* Display images inline */
+    margin: 20px; /* Add some space around the images */
+  }
+  h3{
+    color: #eaee04;
+  }
+  .description p{
+  color: #fff;
+  }
+  .description span{
+    font-weight: bolder;
+    }
+  #image-text1 {
+    position: absolute;
+    top: 58%; /* Adjust as needed to vertically center the text */
+    left: 15%; /* Adjust as needed to horizontally center the text */
+    transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+#image-text2 {
+  position: absolute;
+  top: 58%; /* Adjust as needed to vertically center the text */
+  left: 67%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+#image-text3 {
+  position: absolute;
+  top: 103%; /* Adjust as needed to vertically center the text */
+  left: 15%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+#image-text4 {
+  position: absolute;
+  top: 103%; /* Adjust as needed to vertically center the text */
+  left: 67%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+#image-text5 {
+  position: absolute;
+  top: 148%; /* Adjust as needed to vertically center the text */
+  left: 15%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+#image-text6 {
+  position: absolute;
+  top: 148%; /* Adjust as needed to vertically center the text */
+  left: 65%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+#image-text7 {
+  position: absolute;
+  top: 193%; /* Adjust as needed to vertically center the text */
+  left: 15%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+#image-text8 {
+  position: absolute;
+  top: 193%; /* Adjust as needed to vertically center the text */
+  left: 65%; /* Adjust as needed to horizontally center the text */
+  transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+  .description {
+    text-align: left; /* Left align the descriptions */
+    display: inline-block; /* Display descriptions inline */
+    vertical-align: top; /* Align descriptions to the top of the images */
+    margin: 10px; /* Add some space around the descriptions */
+    width: 200px; /* Set a fixed width for the descriptions */
+  }
+  .moveup:hover {
+    transform: translateY(-5px); /* Move the image 5px up on hover */
+    color: #00060c;
+    opacity: 50%;
+}
+.moveup{
+  transition: transform 0.3s;
+  border-radius: 10px;
+  width:400px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #f50800 0%, #fe0000 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 1px;
+}
+
+button:hover {
+  background-color: #00f2fe;
+  transform: translateY(-0.9px);
+}
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to right, #00060c 0%, #121313 100%);
+}
+button:visited {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to right, #00060c 0%, #121313 100%);
+}
+
+
+
+ 

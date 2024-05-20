@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="omovalleylogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Aphome.css">
+    <link rel="stylesheet" href="Aplogin.css">
+    <title>LOGIN</title>
+   
+</head>
+<body>
+<div class="full-page">
+    <div class="navbar">
+        <header>
+            <nav>
+                <ul>
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto">LOGIN</button></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    <div id='login-form' class='login-page'>
+        <!-- <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>please login using your
+                    personal information to stay connected with us
+                </p>
+            </div>-->
+        <div class="form-box">
+            <div class="button-box">
+                <div id='btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                    <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+            </div>    
+                <form id='login' class='input-group-login'  action="login.php" method="post">
+                    <input type='text' class='input-field' placeholder='Email Id' required>
+                    
+                    <input type='password' class='input-field' placeholder='Enter Password' required>
+                   
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                    <button type='submit' class='submit-btn'>Log In</button>
+                    <div class="bottom-link">
+                        Don't have an account?
+                        <a href="#">Register</a>
+                    </div> 
+                </form>
+                
+               <form id='register' class='input-group-register' action="register.php">
+                    <input type='text' class='input-field' placeholder='First Name' required>
+                    
+                    <input type='text' class='input-field' placeholder='Last Name' required>
+                  
+                    <input type='email' class='input-field' placeholder='Email Id' required>
+                   
+                    <input type='password' class='input-field' placeholder='Enter Password' required>
+                 
+                    <input type='password' class='input-field' placeholder='confirm Password' required>
+                  
+                    <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+                    <button type='submit' class='submit-btn'>Register</button>
+
+                    <p class="pra">Already have an account?Log In</p>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<script>
+    function toggleLoginForm() {
+        var loginForm = document.getElementById('login-form');
+        if (loginForm.style.display === 'block') {
+            loginForm.style.display = 'none';
+        } else {
+            loginForm.style.display = 'block';
+        }
+    }
+</script>
+<script>
+    var x=document.getElementById('login');
+    var y=document.getElementById('register');
+    var z=document.getElementById('btn');
+    function register()
+    {
+        x.style.left='-400px';
+        y.style.left='50px';
+        z.style.left='110px';
+    }
+    function login()
+    {
+        x.style.left='50px';
+        y.style.left='450px';
+        z.style.left='0px';
+    }
+</script>
+<script>
+    var modal = document.getElementById('login-form');
+    window.onclick = function(event)
+    {
+        if (event.target == modal)
+        {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
